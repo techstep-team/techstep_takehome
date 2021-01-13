@@ -12,7 +12,7 @@ Parts of the assessment:
 - Display the returned names and attributes however you would like. Feel free to play arround with styled components if you'd like.
 - Create a Pull Request on Github once you are done.
 
-To be able to do this, you may have to write backend route(s) that will retrieve data from the database and perform filter operations based on the search. You may also take advantage of any componet libraries such as Ant Design, and _______ to get compenets such as search bars or layouts. Also keep in mind good coding practices like commenting, committing when needed, etc.
+To be able to do this, you may have to write backend route(s) that will retrieve data from the database and perform filter operations based on the search. You may also take advantage of any componet libraries such as Ant Design or Bootstrap to get compenets such as search bars or layouts. Also keep in mind good coding practices like commenting, committing when needed, etc.
 
 The database should already be connected in the backend folder of this repo. To access the DB, you can write routes in the backend that you use from your React App. The DB table you will need is called **'users'**. This table has a column called **'name'** which will be used for filtering with the search word that a user might input. The other columns include **'email'** (string), **'age'** (integer), **'location'** (string), and **'is_registered'** (boolean). This information will need to be displayed on your page however you would like. Feel free to show us any interesting styling techniques you may have learned!
 
@@ -58,6 +58,10 @@ In the backend directory, run the command:
 
   
 We realize that there are many ways to go about completing this assessment, please proceed with how you believe is the best way. Good commenting of code is welcomed and proper coding practices are a must. Even though you are not timed, this assessment should not take you more than 2-3 hours, but feel free to use utilize more time if needed.  
+
+Some tools that might be helpful:
+- Ant Design or Bootsrap for components and layouts
+- Axios to make the backend call
   
 Once you have finished the assessment, push your code to the repo and create a pull request, and then it should be awaiting review. We are only going to be checking the commit of the pull request and nothing before that, so feel free to push your code as many times as needed and please only create one pull request. Once created, do not close it and reopen it again. 
 
