@@ -46,9 +46,15 @@ function App() {
             />
             <br />
             <br />
-            <span style={{ color: 'grey' }}> © 2020 Techstep Inc.</span>
+            <span style={{ color: 'grey', paddingLeft: '40px' }}>
+              {' '}
+              © 2020 Techstep Inc.
+            </span>
             <br />
-            <span style={{ color: 'grey' }}> All Rights Reserved.</span>
+            <span style={{ color: 'grey', paddingLeft: '40px' }}>
+              {' '}
+              All Rights Reserved.
+            </span>
           </center>
         </Card>
       </Footer>
