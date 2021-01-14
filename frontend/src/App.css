@@ -25,6 +25,7 @@
 .title {
   color: #00ae8c;
   margin-top: -350px;
+  font-size: 30px;
 }
 
 .navbar {
@@ -47,4 +48,39 @@
 
 .footer-tags {
   justify-content: center;
+}
+
+.ourStoryTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 50px;
+  color: #374a59;
+}
+
+.ourStoryText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: justify;
+  color: #374a59;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.buttonClick {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 17px;
+  /* or 104% */
+
+  text-align: center;
+
+  /* White */
+
+  color: #ffffff;
 }
