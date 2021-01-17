@@ -21,8 +21,8 @@ function App() {
         <Row className='card-container'>
           <Card style={{ width: '1500px', height: '280px' }}>
             <Row className='title-container'>
-              <h1 className='title'>
-                Welcome to the TechStep takehome assessment!
+              <h1 className='title' style={{textAlign: 'center'}}>
+                Welcome to the Techstep <br/> takehome assessment! <br/>
               </h1>
             </Row>
             <Row className='title-button'>
