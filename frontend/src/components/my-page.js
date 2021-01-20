@@ -3,8 +3,8 @@ import logo_green from "../logo_green.png";
 import axios from "axios";
 import SelectedUser from "./my-page-selected.component";
 import { AutoComplete } from "antd";
-import { Layout, Row, Card, Col, Button } from "antd";
-const { Header, Content, Footer } = Layout;
+import { Layout, Card } from "antd";
+const { Header, Footer } = Layout;
 
 const MyPage = () => {
   const [options, setOptions] = useState([]);
