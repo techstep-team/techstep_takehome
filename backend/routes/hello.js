@@ -23,7 +23,7 @@ router.get("/get-users", async (req, res) => {
   if (term !== null) {
     query += "name LIKE '%" + term + "%'";
   } else {
-    // No words found in the String :-)
+    // No words found :-)
   }
 
   db.query(query, function (err, result, fields) {
@@ -42,7 +42,6 @@ router.post("/get-user", async (req, res) => {
 
   db.query(query, function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
     res.json(result[0]);
   });
 });
