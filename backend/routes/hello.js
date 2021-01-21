@@ -6,7 +6,9 @@ const router = express.Router();
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    res.send('Hello World!');
+     
+
+    res.send(req.body);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
