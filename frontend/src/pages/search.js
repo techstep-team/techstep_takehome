@@ -1,7 +1,8 @@
 import { Input, Layout, Typography, Row } from 'antd';
-import logo_green from '../logo_green.png';
-import '../App.css';
 import { useState } from 'react';
+import logo_green from '../logo_green.png';
+import axios from 'axios';
+import '../App.css';
 
 const { Search } = Input;
 const { Header, Content } = Layout;
@@ -19,10 +20,10 @@ export default function SearchPage() {
     debounce = setTimeout(() => {
       setLoading(true);
       console.log(e.target.value);
-      setTimeout(() => {
-        setLoading(false);
-        setData([1, 2, 3]);
-      }, 1000);
+      axios
+        .get('http://localhost:5000/api/routes/search/')
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
     }, 500);
   }
 
