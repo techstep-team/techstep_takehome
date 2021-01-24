@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/search', async (req, res, next) => {
   const { name } = req.query;
   try {
-    db.query('SELECT * FROM users', (err, result) => {
+    db.query(`SELECT * FROM users WHERE name Like '%${name}%'`, (err, result) => {
       if (err) {
         console.log(err);
         return res.status(500).send('Server Error');

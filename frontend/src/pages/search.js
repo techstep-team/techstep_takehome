@@ -21,7 +21,7 @@ export default function SearchPage() {
       setLoading(true);
       console.log(e.target.value);
       axios
-        .get('http://localhost:5000/api/routes/search/')
+        .get(`http://localhost:5000/api/routes/search?name=${e.target.value}`)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     }, 500);
