@@ -5,6 +5,7 @@ export default function UserList({ data }) {
     <List
       itemLayout='horizontal'
       dataSource={data}
+      style={{ width: 300, maxWidth: '100vw' }}
       renderItem={(item) => (
         <List.Item>
           <List.Item.Meta

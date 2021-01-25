@@ -1,0 +1,13 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.techstep-logo {
+  position: 'absolute';
+  left: 170;
+  top: 12;
+  height: 30px;
+  padding-left: 30px;
+}

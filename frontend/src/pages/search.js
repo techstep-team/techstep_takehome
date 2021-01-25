@@ -1,8 +1,8 @@
-import { Input, Layout, Typography, Alert, Row, Col } from 'antd';
+import { Input, Layout, Typography, Alert } from 'antd';
 import { useState } from 'react';
 import logo_green from '../logo_green.png';
 import axios from 'axios';
-import '../App.css';
+import './search.css';
 import UserList from '../components/UserList';
 import { Link } from 'react-router-dom';
 
@@ -51,8 +51,8 @@ export default function SearchPage() {
           <img className='techstep-logo' src={logo_green} alt='logo' />
         </Link>
       </Header>
-      <Content>
-        <Title>Find Users</Title>
+      <Content className='content-container'>
+        <Title style={{ color: '#00ae8c' }}>Find Users</Title>
         <Search
           placeholder='Search...'
           loading={loading}
