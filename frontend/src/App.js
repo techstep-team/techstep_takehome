@@ -2,11 +2,18 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Row, Card, Col, Button } from 'antd';
+import { useHistory } from 'react-router-dom';
 import logo_green from './logo_green.png';
 import TeamPic from './TeamPic.png';
 const { Header, Content, Footer } = Layout;
 
 function App() {
+  const history = useHistory();
+
+  function handleButtonClick() {
+    history.push('/search');
+  }
+
   return (
     <Layout style={{ backgroundColor: 'white' }}>
       <Header
@@ -21,12 +28,13 @@ function App() {
         <Row className='card-container'>
           <Card style={{ width: '1500px', height: '280px' }}>
             <Row className='title-container'>
-              <h1 className='title' style={{textAlign: 'center'}}>
-                Welcome to the Techstep <br/> takehome assessment! <br/>
+              <h1 className='title' style={{ textAlign: 'center' }}>
+                Welcome to the Techstep <br /> takehome assessment! <br />
               </h1>
             </Row>
             <Row className='title-button'>
               <Button
+                onClick={handleButtonClick}
                 style={{
                   width: '298px',
                   height: '45px',
