@@ -1,0 +1,34 @@
+.search {
+    text-align: center;
+  }
+.list-container {
+  width: 300px;
+  max-width: 100vw;
+}
+.content-container {
+display: flex;
+flex-direction: column;
+}
+
+
+.navbar {
+padding: 0px 170px 0px 0px;
+background-color: white;
+}
+
+.techstep-logo {
+position: 'absolute';
+left: 170;
+top: 12;
+height: 30px;
+padding-left: 30px;
+}
+
+
+.footer-tags {
+justify-content: center;
+}
+
+
+
+  

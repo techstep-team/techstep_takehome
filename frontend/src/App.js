@@ -4,9 +4,17 @@ import 'antd/dist/antd.css';
 import { Layout, Row, Card, Col, Button } from 'antd';
 import logo_green from './logo_green.png';
 import TeamPic from './TeamPic.png';
+import { useHistory } from 'react-router-dom';
 const { Header, Content, Footer } = Layout;
 
+
+
 function App() {
+  let history = useHistory();
+
+  const redirect = () => {
+    history.push('/search')
+  }
   return (
     <Layout style={{ backgroundColor: 'white' }}>
       <Header
@@ -34,6 +42,7 @@ function App() {
                   borderRadius: '4.5px',
                   border: 'none',
                 }}
+                onClick={redirect}
               >
                 <span className='buttonClick'>To Your Page</span>
               </Button>

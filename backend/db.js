@@ -3,8 +3,8 @@ require('dotenv').config({ path: './.env' });
 console.log(process.env.PASSWORD);
 const connectDB = mysql.createConnection({
   host: `${process.env.HOST}`,
-  user: `${process.env.USERNAME}`,
-  password: `${process.env.PASSWORD}`,
+  user: `${process.env.DBUSER}`,
+  password: `${process.env.DBPASSWORD}`,
 });
 
 connectDB.connect((err) => {
