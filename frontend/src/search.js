@@ -1,6 +1,7 @@
 import React from 'react';
 import './search.css';
-import { Layout, Row, Card, List, Avatar, Input, Typography, } from 'antd';
+import { Layout, Row, Card, List, Avatar, Input, Typography } from 'antd';
+import { CheckCircleOutlined } from '@ant-design/icons';
 import logo_green from './logo_green.png';
 import { search, getInitials } from "./utilis";
 import { Link } from 'react-router-dom';
@@ -40,7 +41,7 @@ class Search extends React.Component {
                     renderItem={(item) => (
                         <List.Item>
                         <List.Item.Meta
-                            title={item.name}
+                            title={`${item.name} | ${item.is_registered ? "Registered": "Not Registered"}`}
                             avatar={
                             <Avatar style={{ backgroundColor: "black" }} size='large'>
                                 {getInitials(item.name)}
