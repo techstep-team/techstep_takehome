@@ -3,11 +3,18 @@ import "antd/dist/antd.css";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { Input, Space, Layout, Row, Card, Col, Button } from "antd";
+import axios from "axios";
 
 const { Search } = Input;
 
-// confirm we have the ability to log a value
-const onSearch = value => console.log("value", value);
+// const apiURL = "techstep-interview-1.cwar9iqenexg.us-west-2.rds.amazonaws.com"
+let result;
+const onSearch = async () => {
+  result = await axios
+  .get("techstep-interview-1.cwar9iqenexg.us-west-2.rds.amazonaws.com")
+};
+
+console.log("result", result)
 
 const UserSearch = () => {
   return (
