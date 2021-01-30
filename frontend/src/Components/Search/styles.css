@@ -1,0 +1,15 @@
+.search__container {
+    margin: 30px; 
+}
+
+.search__go-back-home-button{
+    width: 150px;
+    height: 30px;
+    background: #00AE8C;
+    border-radius: 4.5px;
+    border: none;
+}
+
+.search__input-container {
+    padding-top: 20px;
+}

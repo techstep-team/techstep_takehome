@@ -4,8 +4,7 @@ import 'antd/dist/antd.css';
 import { Layout, Row, Card, Col, Button } from 'antd';
 import logo_green from './logo_green.png';
 import TeamPic from './TeamPic.png';
-import Search from './Search';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const { Header, Content, Footer } = Layout;
 
 function App() {

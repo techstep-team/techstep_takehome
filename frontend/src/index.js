@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Search from "./Search";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "../src/Components/Search/Search";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
