@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Search from "../src/Components/Search/Search";
+import UserSearch from "../src/Components/UserSearch";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Route exact path="/" component={App} />
-      <Route exact path="/search" component={Search} />
+      <Route exact path="/user-search" component={UserSearch} />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

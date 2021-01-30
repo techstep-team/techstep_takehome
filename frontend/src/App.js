@@ -28,7 +28,7 @@ function App() {
               </h1>
             </Row>
             <Row className='title-button'>
-            <Link to="/search">
+            <Link to="/user-search">
               <Button
                 style={{
                   width: '298px',
