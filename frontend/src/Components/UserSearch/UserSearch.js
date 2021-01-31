@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 import { Input, Space, Layout, Row, Card, Col, Button } from "antd";
 import axios from "axios";
 
-// let userResults;
-// const onSearch = async () => {
-//   userResults = await axios.get("/users");
-//   console.log("result", userResults);
-// };
-
-// const userSearch = useState[userResults];
-
 const UserSearch = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,13 +18,12 @@ const UserSearch = () => {
       .then((res) => {
         setUsers(res.data);
         setLoading(false);
-        console.log(res.data)
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-
 
   useEffect(() => {
     setFilteredUsers(
@@ -70,27 +61,31 @@ const UserSearch = () => {
   );
 };
 
-const UserDetails = ({name, email, age, location}) => {
-  
+const UserDetails = ({ name, email, age, location }) => {
   if (name === null) {
-    name = "name unknown"
+    name = "name unknown";
   }
 
   if (email === null) {
-    email = "email unknown"
+    email = "email unknown";
   }
 
   if (age === null) {
-    age = "age unknown"
+    age = "age unknown";
   }
 
   if (location === null) {
-    location = "location unknown"
+    location = "location unknown";
   }
-  
+
   return (
     <Fragment>
-      <p>{name}, {email}, {age}, {location}</p>
+      <Card className="user-search__card">
+        <Col>{name}</Col>
+        <Col>{email}</Col>
+        <Col>{age}</Col>
+        <Col>{location}</Col>
+      </Card>
     </Fragment>
   );
 };

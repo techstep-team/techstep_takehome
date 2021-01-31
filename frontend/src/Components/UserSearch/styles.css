@@ -12,6 +12,7 @@
 
 .user-search__go-back-home-button:hover{
     background:#00AE8C;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
 
@@ -26,5 +27,13 @@
 }
 
 .user-search__input {
-    width: 80%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.user-search__card {
+    justify-content: center;
+
+    width: 40%;
+    margin-bottom: 20px;
 }
