@@ -28,19 +28,21 @@ const UserSearch = () => {
   useEffect(() => {
     setFilteredUsers(
       users.filter((user) =>
-        user.name.toLowerCase().includes(searchUsers.toLowerCase())
+        user.name.toLowerCase().startsWith(searchUsers.toLowerCase())
       )
     );
   }, [searchUsers, users]);
 
   if (loading) {
     return (
-      <div className="user-search__loading-message">"Loading results, be patient!!!"</div>
+      <div className="user-search__loading-message">
+        "Loading results, be patient!!!"
+      </div>
     );
   }
 
   if (searchUsers.value === "") {
-    return []
+    return [];
   }
 
   return (
@@ -69,28 +71,28 @@ const UserSearch = () => {
 
 const UserDetails = ({ name, email, age, location }) => {
   if (name === null) {
-    name = "name unknown";
+    name = "Unknown";
   }
 
   if (email === null) {
-    email = "email unknown";
+    email = "Unknown";
   }
 
   if (age === null) {
-    age = "age unknown";
+    age = "Unknown";
   }
 
   if (location === null) {
-    location = "location unknown";
+    location = "Unknown";
   }
 
   return (
     <Fragment>
       <Card className="user-search__card">
-        <Row>{name}</Row>
-        <Row>{email}</Row>
-        <Row>{age}</Row>
-        <Row>{location}</Row>
+        <Row><b>Name:&nbsp;</b>{name}</Row>
+        <Row><b>Email:&nbsp;</b>{email}</Row>
+        <Row><b>Age:&nbsp;</b>{age}</Row>
+        <Row><b>Location:&nbsp;</b>{location}</Row>
       </Card>
     </Fragment>
   );
