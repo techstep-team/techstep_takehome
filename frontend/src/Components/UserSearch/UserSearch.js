@@ -26,11 +26,13 @@ const UserSearch = () => {
       .then((res) => {
         setUsers(res.data);
         setLoading(false);
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
 
   useEffect(() => {
     setFilteredUsers(
@@ -68,9 +70,24 @@ const UserSearch = () => {
   );
 };
 
-const UserDetails = (props) => {
-  const { name, email, age, location } = props;
+const UserDetails = ({name, email, age, location}) => {
+  
+  if (name === null) {
+    name = "name unknown"
+  }
 
+  if (email === null) {
+    email = "email unknown"
+  }
+
+  if (age === null) {
+    age = "age unknown"
+  }
+
+  if (location === null) {
+    location = "location unknown"
+  }
+  
   return (
     <Fragment>
       <p>{name}, {email}, {age}, {location}</p>
