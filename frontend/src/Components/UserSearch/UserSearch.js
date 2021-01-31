@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "antd/dist/antd.css";
 import "./styles.css";
 import { Link } from "react-router-dom";
@@ -44,8 +44,6 @@ const UserSearch = () => {
     return <p>Loading... be patient!!!</p>;
   }
 
-  console.log(setSearchUsers)
-
   return (
     <div className="user-search__container">
       <Link to="/">
@@ -61,12 +59,22 @@ const UserSearch = () => {
           onChange={(e) => setSearchUsers(e.target.value)}
         />
       </div>
-      <div
-        className="user-search__search-results"
-        // userSearch={userSearch}
-      ></div>
+      <div className="user-search__search-results">
+        {filteredUsers.map((user, id) => (
+          <UserDetails key={id} {...user} />
+        ))}
+      </div>
     </div>
   );
 };
 
+const UserDetails = (props) => {
+  const { name, email, age, location } = props;
+
+  return (
+    <Fragment>
+      <p>{name}, {email}, {age}, {location}</p>
+    </Fragment>
+  );
+};
 export default UserSearch;
