@@ -11,6 +11,8 @@ const UserSearch = () => {
   const [searchUsers, setSearchUsers] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
 
+  // get "user" data, set to empty array
+
   useEffect(() => {
     setLoading(true);
     axios
@@ -25,6 +27,8 @@ const UserSearch = () => {
       });
   }, []);
 
+  // set filtered users by first letters, set dependencies of array to users and searchUsers
+
   useEffect(() => {
     setFilteredUsers(
       users.filter((user) =>
@@ -33,16 +37,14 @@ const UserSearch = () => {
     );
   }, [searchUsers, users]);
 
+  // if results loading, set a message; useful if tons of results
+
   if (loading) {
     return (
       <div className="user-search__loading-message">
         "Loading results, be patient!!!"
       </div>
     );
-  }
-
-  if (searchUsers.value === "") {
-    return [];
   }
 
   return (
@@ -68,6 +70,8 @@ const UserSearch = () => {
     </div>
   );
 };
+
+// handle null values
 
 const UserDetails = ({ name, email, age, location }) => {
   if (name === null) {
