@@ -3,6 +3,7 @@
 }
 
 .user-search__go-back-home-button{
+    float:right;
     width: 150px;
     height: 30px;
     background: #00AE8C;
@@ -13,7 +14,6 @@
 .user-search__go-back-home-button:hover{
     background:#00AE8C;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
 }
 
 .user-search__go-back-home-text {
@@ -32,8 +32,6 @@
 }
 
 .user-search__card {
-    justify-content: center;
-
     width: 40%;
     margin-bottom: 20px;
 }

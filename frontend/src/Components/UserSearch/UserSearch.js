@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import "antd/dist/antd.css";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { Input, Space, Layout, Row, Card, Col, Button } from "antd";
+import { Input, Row, Card, Button } from "antd";
 import axios from "axios";
 
 const UserSearch = () => {
@@ -34,7 +34,13 @@ const UserSearch = () => {
   }, [searchUsers, users]);
 
   if (loading) {
-    return <p>Loading... be patient!!!</p>;
+    return (
+      <div className="user-search__loading-message">"Loading results, be patient!!!"</div>
+    );
+  }
+
+  if (searchUsers.value === "") {
+    return []
   }
 
   return (
@@ -81,10 +87,10 @@ const UserDetails = ({ name, email, age, location }) => {
   return (
     <Fragment>
       <Card className="user-search__card">
-        <Col>{name}</Col>
-        <Col>{email}</Col>
-        <Col>{age}</Col>
-        <Col>{location}</Col>
+        <Row>{name}</Row>
+        <Row>{email}</Row>
+        <Row>{age}</Row>
+        <Row>{location}</Row>
       </Card>
     </Fragment>
   );
