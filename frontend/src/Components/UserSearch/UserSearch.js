@@ -1,31 +1,68 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { Input, Space, Layout, Row, Card, Col, Button } from "antd";
 import axios from "axios";
 
-const { Search } = Input;
+// let userResults;
+// const onSearch = async () => {
+//   userResults = await axios.get("/users");
+//   console.log("result", userResults);
+// };
 
-// const apiURL = "techstep-interview-1.cwar9iqenexg.us-west-2.rds.amazonaws.com"
-let result;
-const onSearch = async () => {
-  result = await axios
-  .get("techstep-interview-1.cwar9iqenexg.us-west-2.rds.amazonaws.com")
-};
-
-console.log("result", result)
+// const userSearch = useState[userResults];
 
 const UserSearch = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searchUsers, setSearchUsers] = useState("");
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("/users")
+      .then((res) => {
+        setUsers(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    setFilteredUsers(
+      users.filter((user) =>
+        user.name.toLowerCase().includes(searchUsers.toLowerCase())
+      )
+    );
+  }, [searchUsers, users]);
+
+  if (loading) {
+    return <p>Loading... be patient!!!</p>;
+  }
+
   return (
     <div className="user-search__container">
       <Link to="/">
         <Button className="user-search__go-back-home-button">
-          <span className="buttonClick">Go back home</span>
+          <span className="user-search__go-back-home-text">Go back home</span>
         </Button>
       </Link>
       <div className="user-search__input-container">
-      <Search className="user-search__input" placeholder="input search text" onSearch={onSearch} enterButton /></div>
+        <Input
+          type="text"
+          className="user-search__input"
+          placeholder="Search for a user"
+          enterButton
+        />
+      </div>
+      <div
+        className="user-search__search-results"
+        // userSearch={userSearch}
+      ></div>
     </div>
   );
 };

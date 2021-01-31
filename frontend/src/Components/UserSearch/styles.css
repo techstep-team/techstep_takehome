@@ -10,6 +10,15 @@
     border: none;
 }
 
+.user-search__go-back-home-button:hover{
+    background:#00AE8C;
+    
+}
+
+.user-search__go-back-home-text {
+    color: #FFFFFF;
+}
+
 .user-search__input-container {
     padding-top: 20px;
     width: 300px;

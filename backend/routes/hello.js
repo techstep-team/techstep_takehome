@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // @route   GET api/routes
 // @desc    This is a basic root route
 // @access  Public
-router.get('/', async (req, res) => {
+router.get("/", async (req, res, next) => {
   try {
     res.send('Hello World!');
   } catch (err) {

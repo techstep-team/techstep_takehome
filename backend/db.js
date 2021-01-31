@@ -1,23 +1,24 @@
-const mysql = require("mysql");
-require("dotenv").config({ path: "./.env" });
-console.log(process.env.PASSWORD);
-const connectDB = mysql.createConnection({
-  host: `${process.env.HOST}`,
-  user: `${process.env.USERNAME}`,
-  password: `${process.env.PASSWORD}`,
-  database: "content_db",
-});
 
-const query = "SELECT * FROM users";
+// const mysql = require("mysql");
+// require("dotenv").config({ path: "./.env" });
+// console.log(process.env.PASSWORD);
+// const connectDB = mysql.createConnection({
+//   host: `${process.env.HOST}`,
+//   user: `${process.env.USERNAME}`,
+//   password: `${process.env.PASSWORD}`,
+//   database: "content_db",
+// });
 
-connectDB.connect((err) => {
-  if (err) throw err;
-  connectDB.query(query, (err, result, fields) => {
-    if (err) throw err;
+// const query = "SELECT * FROM users";
 
-    console.log("result", result.RowDataPacket.id);
-  });
-  console.log("Database Connected!", connectDB);
-});
+// connectDB.connect((err) => {
+//   if (err) throw err;
+//   connectDB.query(query, (err, result, fields) => {
+//     if (err) throw err;
 
-module.exports = connectDB;
+//     console.log("result", result);
+//   });
+//   console.log("Database Connected!");
+// });
+
+// module.exports = connectDB;

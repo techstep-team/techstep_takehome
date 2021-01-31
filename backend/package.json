@@ -4,15 +4,23 @@
   "description": "Backend for Techstep takehome assessment",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix frontend",
+    "clientinstall": "npm install --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm start\"",
     "test": "node server"
   },
   "author": "Vishal Vaddadhi",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
     "config": "^3.3.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7"
   }
 }
