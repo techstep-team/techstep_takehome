@@ -44,6 +44,8 @@ const UserSearch = () => {
     return <p>Loading... be patient!!!</p>;
   }
 
+  console.log(setSearchUsers)
+
   return (
     <div className="user-search__container">
       <Link to="/">
@@ -56,7 +58,7 @@ const UserSearch = () => {
           type="text"
           className="user-search__input"
           placeholder="Search for a user"
-          enterButton
+          onChange={(e) => setSearchUsers(e.target.value)}
         />
       </div>
       <div
