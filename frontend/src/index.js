@@ -11,8 +11,6 @@ ReactDOM.render(
     <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/search" component={Search}/>
-        {/* <App /> */}
-        {/* <Search /> */}
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
