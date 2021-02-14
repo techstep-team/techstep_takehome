@@ -5,6 +5,7 @@ import { Layout, Row, Card, Col, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import logo_green from './logo_green.png';
 import TeamPic from './TeamPic.png';
+
 const { Header, Content, Footer } = Layout;
 
 function App() {
