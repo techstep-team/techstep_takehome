@@ -33,11 +33,6 @@ function Search() {
             return user.name.toLowerCase().includes(input.toLowerCase());
         })
         setInput(input);
-        // if(currentList.length == 0){
-        //     setUsers(users);
-        // } else {
-        //     setUsers(currentList);
-        // }
         if(input != ''){
             setUsers(currentList);
         } else {
@@ -47,12 +42,12 @@ function Search() {
     }
 
     return(
-        <div>
+        <div className="search">
             <h1>Search</h1>
             <input
-                className="search"
+                className="searchbar"
                 type="text"
-                placeholder="Search for anything..."
+                placeholder="Search by name..."
                 input={input}
                 onChange={(e) => updateInput(e.target.value)}
                 />

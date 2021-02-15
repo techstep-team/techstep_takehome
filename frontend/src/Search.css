@@ -1,16 +1,27 @@
-.Search {
+.search {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin: 10px 15px 10px 15px;
 }
-/* 
+
+.searchbar {
+  margin: 10px 15px 10px 15px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 .title {
   font-size: 30px;
   text-align: center;
-} */
+}
 
 .users {
-  /* font-family: Inter; */
+  font-family: Inter;
   border-collapse: collapse;
-  width: 100%;
+  margin: 10px 15px 10px 15px;
+  border-radius: 5px;
 }
 
 .users td, .users th {
@@ -24,6 +35,6 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #00ae8c;;
+  background-color: #00ae8c;
   color: white;
 }
