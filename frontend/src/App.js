@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Row, Card, Col, Button } from 'antd';
+import { Link } from 'react-router-dom';
 import logo_green from './logo_green.png';
 import TeamPic from './TeamPic.png';
+
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
               </h1>
             </Row>
             <Row className='title-button'>
+            <Link to='/search'>
               <Button
                 style={{
                   width: '298px',
@@ -37,6 +40,7 @@ function App() {
               >
                 <span className='buttonClick'>To Your Page</span>
               </Button>
+              </Link>
             </Row>
           </Card>
         </Row>
