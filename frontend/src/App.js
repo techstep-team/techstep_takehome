@@ -23,7 +23,16 @@ function App() {
       </Header>
       <Route path="/search" component={Search} />
       <Route exact path="/" component={Home} />
-      <Footer style={{ backgroundColor: '#182628', height: '200px' }}>
+      <Footer
+        style={{
+          backgroundColor: '#182628',
+          height: '200px',
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          right: 0,
+        }}
+      >
         <Card
           style={{
             width: '100%',
