@@ -19,7 +19,7 @@ router.get('/users/search/:searchString', async (req, res) => {
                     })
                 }
                 console.log(result)
-                return res.status(200).json(result)
+                return res.status(200).json({ result: result })
             }
         )
     } catch (err) {

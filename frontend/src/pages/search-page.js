@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Layout, Row, Card, Col, Button } from 'antd';
+import { Layout, Row, Card, List, Avatar} from 'antd'
+import { UserOutlined } from '@ant-design/icons';
+
 import 'antd/dist/antd.css';
 import '../App.css';
 import logo_green from '../logo_green.png'
 import axios from 'axios'
 
 const { Header, Content, Footer } = Layout;
-
-
-
 
 
 const SearchPage = () => {
@@ -27,14 +26,16 @@ const SearchPage = () => {
     const handleSearch = async (e) => {
         e.preventDefault()
         setBtnText('Searching...')
+        setErrorMessage('')
         if (searchString !== '') {
             try {
                 const res = await axios.get(`http://localhost:5000/api/routes/users/search/${searchString}`)
                 console.log(res)
+                const { result } = res.data
                 if (res.status === 200) {
                     setBtnText('Search Users')
                     setErrorMessage(null)
-                    setSearchResults([...res.data])
+                    setSearchResults(result)
                 }
             }
             catch (res) {
@@ -45,6 +46,33 @@ const SearchPage = () => {
             setBtnText('Search Users')
             setErrorMessage('Please input name and try search again')
         }
+    }
+
+    const renderResults = () => {
+        const info = (user) => (
+            <>
+                {user.email && (<>Email: {user.email} <br /> </>)}
+                {user.age && (<>Age: {user.age} <br /> </>)}
+                {user.location && (<>Location: {user.location} <br /> </>)}
+            </>
+        )
+
+        return (
+            <List 
+                itemLayout='vertical'
+                dataSource={searchResults}
+                renderItem={user => (
+                    <List.Item>
+                        <List.Item.Meta
+                            avatar={<Avatar style={{ backgroundColor: '#00ae8c' }} icon={<UserOutlined />} />}
+                            title={user.name}
+                            description={info(user)}
+                        />
+                    </List.Item>
+                )}
+            >
+            </List>
+        )
     }
 
     return (
@@ -59,7 +87,7 @@ const SearchPage = () => {
                     <Row className='card-container'>
                         <Card style={{ width: '1500px', height: '280px' }}>
                             <Row className='title-container'>
-                            <h1 className='title' style={{textAlign: 'center'}}>
+                            <h1 className='title' style={{textAlign: 'center', fontSize: '3rem', fontWeight: '600'}}>
                                 User Search Portal
                             </h1>
                             </Row>
@@ -79,6 +107,14 @@ const SearchPage = () => {
                             )}
                         </Card>
                     </Row>
+                    <Row className='card-container'>
+                        <Card style={{ width: '500px', height: 'auto' }}>
+                            <ResultsContainer>
+                                <ResultsHeader>Results</ResultsHeader>
+                                {renderResults()}
+                            </ResultsContainer>
+                        </Card>
+                    </Row>
                 </Content>
             </Layout>
         </>
@@ -89,6 +125,16 @@ export default SearchPage
 
 
 // STYLED COMPONENTS
+const ResultsHeader = styled.div`
+    font-size: 3rem;
+    font-weight: 500;
+`;
+
+const ResultsContainer = styled.div`
+    margin: 0 auto;
+    text-align: center;
+`;
+
 const ErrorMessage = styled.div`
     margin: 0 auto;
     text-align: center;
