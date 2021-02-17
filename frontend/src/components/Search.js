@@ -1,71 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import SearchResults from './SearchResults';
 
-class Search extends Component {
-  state = {
-    data: [
-      {
-        id: 1,
-        name: 'Sophia Doo',
-        email: 'sdoo@gmail.com',
-        age: 20,
-        location: 'San Francisco, CA',
-        is_registered: 0,
-      },
-      {
-        id: 2,
-        name: 'Elon Musket',
-        email: 'elon@gmail.com',
-        age: 45,
-        location: 'Los Angeles, CA',
-        is_registered: 1,
-      },
-      {
-        id: 3,
-        name: 'Steve Steven',
-        email: null,
-        age: null,
-        location: 'Austin, TX',
-        is_registered: 0,
-      },
-      {
-        id: 4,
-        name: 'Emily B',
-        email: 'emilyb@techstep.com',
-        age: 23,
-        location: 'Tampa, FL',
-        is_registered: 0,
-      },
-      {
-        id: 5,
-        name: 'Erika Lynch',
-        email: 'lynch@techstep.com',
-        age: null,
-        location: 'Dallas, TX',
-        is_registered: 1,
-      },
-    ],
+import axios from 'axios';
+
+const Search = () => {
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
-  render() {
-    return (
-      <div className="mx-auto">
-        <h1>Search Page</h1>
-        <form className="form-inline mb-5" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <input
-              id="searchParams"
-              type="text"
-              className="form-control"
-              placeholder="Search for a user"
-            />
-          </div>
-          <button className="btn btn-primary ml-1">Search</button>
-        </form>
-        <SearchResults userData={this.state.data} />
-      </div>
-    );
-  }
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios({
+      method: 'get',
+      url: 'api/users',
+      params: {
+        searchQuery: searchQuery,
+      },
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    }).then((response) => {
+      setSearchResults(response.data);
+    });
+  };
+
+  return (
+    <div className="mx-auto">
+      <h1>Search Page</h1>
+      <form className="form-inline mb-5" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            name="params"
+            type="text"
+            onChange={handleChange}
+            className="form-control"
+            placeholder="Search for a user"
+          />
+        </div>
+        <button className="btn btn-primary ml-1">Search</button>
+      </form>
+      <SearchResults userData={searchResults} />
+    </div>
+  );
+};
 
 export default Search;

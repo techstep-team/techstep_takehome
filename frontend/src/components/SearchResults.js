@@ -3,7 +3,7 @@ import React from 'react';
 function SearchResults({ userData }) {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -19,10 +19,10 @@ function SearchResults({ userData }) {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.age}</td>
-              <td>{user.location}</td>
-              <td>{user.is_registered}</td>
+              <td>{user.email ? user.email : 'N/A'}</td>
+              <td>{user.age ? user.age : 'N/A'}</td>
+              <td>{user.location ? user.location : 'N/A'}</td>
+              <td>{user.is_registered ? 'Yes' : 'No'}</td>
             </tr>
           ))}
         </tbody>
