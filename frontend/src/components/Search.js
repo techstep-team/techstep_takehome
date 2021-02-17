@@ -32,7 +32,7 @@ const Search = () => {
 
   return (
     <div className="mx-auto">
-      <h1>Search Page</h1>
+      <h1>Users</h1>
       <form className="form-inline mb-5" onSubmit={handleSubmit}>
         <div className="form-group">
           <input

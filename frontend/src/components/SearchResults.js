@@ -3,7 +3,7 @@ import React from 'react';
 function SearchResults({ userData }) {
   return (
     <div>
-      <table className="table">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
