@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Card } from 'antd';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import logo_green from './logo_green.png';
 
 import Home from './components/Home';
@@ -19,7 +19,9 @@ function App() {
           background: 'white',
         }}
       >
-        <img className="techstep-logo" src={logo_green} alt="Techstep logo" />
+        <Link to="/">
+          <img className="techstep-logo" src={logo_green} alt="Techstep logo" />
+        </Link>
       </Header>
       <Route path="/search" component={Search} />
       <Route exact path="/" component={Home} />
