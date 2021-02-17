@@ -10,9 +10,8 @@ import {
 import SearchPage from './pages/search-page'
 import HomePage from './pages/home-page'
 
-
+// Using react-router for client-side routing 
 function App() {
-
   return (
     <Router>
       <Switch>

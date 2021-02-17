@@ -18,19 +18,21 @@ const SearchPage = () => {
     const [ errorMessage, setErrorMessage ] = useState('')
     const [ searchResults, setSearchResults ] = useState([])
 
-
+    // updates value of search string 
     const handleSearchString = (e) => {
         setSearchString(e.target.value)
     }
 
+    // call to backend
     const handleSearch = async (e) => {
         e.preventDefault()
         setBtnText('Searching...')
         setErrorMessage('')
+        
+        // returns errorMessage if user attempts search with empty string
         if (searchString !== '') {
             try {
                 const res = await axios.get(`http://localhost:5000/api/routes/users/search/${searchString}`)
-                console.log(res)
                 const { result } = res.data
                 if (res.status === 200) {
                     setBtnText('Search Users')
@@ -48,6 +50,7 @@ const SearchPage = () => {
         }
     }
 
+    // Render search results in list using antd List & Avatar component 
     const renderResults = () => {
         const info = (user) => (
             <>
@@ -78,12 +81,16 @@ const SearchPage = () => {
     return (
         <>
             <Layout style={{ backgroundColor: 'white' }}>
+                
+                {/* Navigation back to home page */}
                 <Header style={{ padding: '0 170px 60px 0', background: 'white', }}>
                     <Link to='/'>
                         <img className='techstep-logo' src={logo_green} alt='logo' />
                     </Link>
                 </Header>
                 <Content style={{ backgroundColor: 'white', paddingBottom: '200px' }}>
+                    
+                    {/* Header and search bar  */}
                     <Row className='card-container'>
                         <Card style={{ width: '1500px', height: '280px' }}>
                             <Row className='title-container'>
@@ -107,6 +114,8 @@ const SearchPage = () => {
                             )}
                         </Card>
                     </Row>
+
+                    {/* Results List */}
                     <Row className='card-container'>
                         <Card style={{ width: '600px', height: 'auto' }}>
                             <ResultsContainer>
@@ -116,6 +125,8 @@ const SearchPage = () => {
                         </Card>
                     </Row>
                 </Content>
+
+                {/* Footer */}
                 <Footer style={{ backgroundColor: '#182628', height: '200px' }}>
                     <Card
                         style={{
