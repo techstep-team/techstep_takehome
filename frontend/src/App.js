@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Layout, Row, Card, Col, Button } from 'antd';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Layout, Card } from 'antd';
+import { Route } from 'react-router-dom';
 import logo_green from './logo_green.png';
 
 import Home from './components/Home';
