@@ -108,7 +108,7 @@ const SearchPage = () => {
                         </Card>
                     </Row>
                     <Row className='card-container'>
-                        <Card style={{ width: '500px', height: 'auto' }}>
+                        <Card style={{ width: '600px', height: 'auto' }}>
                             <ResultsContainer>
                                 <ResultsHeader>Results</ResultsHeader>
                                 {renderResults()}
@@ -116,6 +116,34 @@ const SearchPage = () => {
                         </Card>
                     </Row>
                 </Content>
+                <Footer style={{ backgroundColor: '#182628', height: '200px' }}>
+                    <Card
+                        style={{
+                        width: '100%',
+                        backgroundColor: '#182628',
+                        borderColor: '#182628',
+                        }}
+                    >
+                        <center>
+                        <img
+                            className='techstep-logo'
+                            src={logo_green}
+                            alt='Techstep Logo'
+                        />
+                        <br />
+                        <br />
+                        <span style={{ color: 'grey', paddingLeft: '40px' }}>
+                            {' '}
+                            © 2020 Techstep Inc.
+                        </span>
+                        <br />
+                        <span style={{ color: 'grey', paddingLeft: '40px' }}>
+                            {' '}
+                            All Rights Reserved.
+                        </span>
+                        </center>
+                    </Card>
+                </Footer>
             </Layout>
         </>
     )
