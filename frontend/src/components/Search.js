@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchResults from './SearchResults';
 
-import axios from 'axios';
+import UserService from '../services/api/UserService';
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -13,20 +13,8 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios({
-      method: 'get',
-      url: 'api/users',
-      params: {
-        searchQuery: searchQuery,
-      },
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    }).then((response) => {
-      setSearchResults(response.data);
+    UserService.get(searchQuery).then((response) => {
+      setSearchResults(response);
     });
   };
 
