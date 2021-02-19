@@ -1,0 +1,93 @@
+:root {
+  --search-bar-radius: 5px;
+}
+
+* {
+  font-family: 'Inter'
+}
+
+h1 {
+  color: #57bb98;
+}
+
+h2 {
+  color: #374a59;
+}
+
+p {
+  color: #374a59;
+}
+
+#search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 10%;
+}
+
+input[type="text"] {
+  border-top-left-radius: var(--search-bar-radius);
+  border-bottom-left-radius: var(--search-bar-radius);
+  border-right: 0px;
+  width: 70%;
+  box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.37);
+  border-width: 0px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  color: white;
+  border-top-right-radius: var(--search-bar-radius);
+  border-bottom-right-radius: var(--search-bar-radius);
+  border-left: 0px;
+  border-width: 0px;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.37);
+  background-color: #57bb98;
+  font-weight: bold;
+}
+
+input[type="submit"]:focus {
+  box-shadow: 0 0 0 0;
+  outline: none;
+}
+
+#searchbar-container {
+  width: 60%;
+}
+
+#searchbar-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#results-container {
+  width: 100%;
+  margin: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-card {
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.37);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+  width: 30%;
+  border-radius: 7px;
+  margin: 2%
+}
+
+.green {
+  color: #57bb98;
+}
+
+.bold-label {
+  font-weight: bold;
+}
