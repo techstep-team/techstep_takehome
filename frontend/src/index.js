@@ -6,21 +6,18 @@ import Search from './pages/Search';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Switch>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-      </Switch>
+        <Route exact path="/search">
+          <Search />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
