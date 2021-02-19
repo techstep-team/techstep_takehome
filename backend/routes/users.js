@@ -5,8 +5,9 @@ const { findUserByName } = require('../models');
 // @route   GET api/routes/users
 // @desc    A route for fetching users, filtered by name using a search term
 // @access  Public
-router.get('/users/:term', async (req, res) => {
-  const { term } = req.params;
+router.get('/users', async (req, res) => {
+  const { term } = req.query;
+  
   try {
     const results = await findUserByName(term);
     res.send(results);
