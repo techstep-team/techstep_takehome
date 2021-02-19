@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {findUserByName} = require('../models');
+const { findUserByName } = require('../models');
 
 // @route   GET api/routes/users
 // @desc    A route for fetching users, filtered by name using a search term
