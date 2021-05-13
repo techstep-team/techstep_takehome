@@ -2,11 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Search from './Search';
 import reportWebVitals from './reportWebVitals';
+import {Route, Switch, BrowserRouter} from "react-router-dom"
+
+const Routes = () => {
+return(
+<BrowserRouter>
+    <Switch>
+      <Route exact path="/" component = {App}/>
+      <Route exact path="/search" component = {Search}/>
+  </Switch>
+</BrowserRouter>
+)}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );
