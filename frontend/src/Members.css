@@ -1,0 +1,50 @@
+.member-search {
+    max-width: 30rem;
+}
+
+.members-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-title {
+  color: #00ae8c;
+  font-size: 30px;
+}
+
+.ant-btn-primary {
+  background: #00ae8c;
+  border-color: #00ae8c;
+}
+
+.ant-btn-primary:hover {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(0, 0, 0, 0.85);
+}
+
+.member-title-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  height: 40vh;
+  background: center / cover no-repeat url('./LP_Hero_Image_2.png');
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.results-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50vw;
+
+}

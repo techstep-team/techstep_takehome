@@ -1,0 +1,15 @@
+.user-card {
+    width: 20rem;
+    height: 15rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.user-title {
+    background:#00ae86;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}

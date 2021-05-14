@@ -2,31 +2,6 @@
   text-align: center;
 }
 
-.title-container {
-  justify-content: center;
-  background-image: url('./LP_Hero_Image_2.png');
-  margin: -25px;
-  padding-top: 300px;
-  padding-right: 50px;
-  padding-left: 50px;
-  padding-bottom: 70px;
-  min-width: 1350px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-container {
-  justify-content: center;
-}
-.title {
-  color: #00ae8c;
-  margin-top: -350px;
-  font-size: 30px;
-}
 
 .navbar {
   padding: 0px 170px 0px 0px;
@@ -41,46 +16,9 @@
   padding-left: 30px;
 }
 
-.title-button {
-  justify-content: center;
-  margin-top: -170px;
-}
 
 .footer-tags {
   justify-content: center;
 }
 
-.ourStoryTitle {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 50px;
-  color: #374a59;
-}
 
-.ourStoryText {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 30px;
-  text-align: justify;
-  color: #374a59;
-  opacity: 0.8;
-  margin-bottom: 30px;
-}
-
-.buttonClick {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 17px;
-  /* or 104% */
-
-  text-align: center;
-
-  /* White */
-
-  color: #ffffff;
-}
